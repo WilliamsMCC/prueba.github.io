@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="less/style.less">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Portafolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre mí</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <p>
+                Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto con nosotros.
+                Aquí tienes varias formas de hacerlo:
+            </p>
+            <div class="formas-contacto">
+                <h3>Formas de Contactarnos</h3>
+                <ul>
+                    <li><strong>Teléfono:</strong> +504 93948111 </li>
+                    <li><strong>Email:</strong> Williamsmarincc@gmail.com</li>
+                    <li><strong>Dirección:</strong> Calle el Centro, Trujillo, Honduras</li>
+                </ul>
+            </div>
+            <form id="contact-form">
+                <h3>También puedes enviarnos un mensaje:</h3>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                
+                <button type="submit" class="boton-compra">Enviar</button>
+            </form>
+            <div class="mensaje-exito" id="mensaje-exito">¡Mensaje enviado con éxito!</div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Williams Castellanos</p>
+    </footer>
+    <script src="/src/main.js"></script>
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const mensajeExito = document.getElementById('mensaje-exito');
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            mensajeExito.classList.add('show');
+            contactForm.reset();
+
+            setTimeout(() => {
+                mensajeExito.classList.remove('show');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
